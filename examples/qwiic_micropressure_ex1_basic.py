@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 #-------------------------------------------------------------------------------
-# qwiic_template_ex1_title.py TODO: replace template and title
-#
-# TODO: Add description for this example
+# qwiic_micropressure_ex1_basic.py 
+# 
+# Basic test of the Qwiic MicroPressure Sensor
 #-------------------------------------------------------------------------------
-# Written by SparkFun Electronics, TODO: month and year
+# Written by SparkFun Electronics, November 2024
 #
 # This python library supports the SparkFun Electroncis Qwiic ecosystem
 #
@@ -33,30 +33,46 @@
 # SOFTWARE.
 #===============================================================================
 
-import qwiic_template # TODO Import correct package
+import qwiic_micropressure
 import sys
+import time
 
 def runExample():
-	# TODO Replace template and title
-	print("\nQwiic Template Example 1 - Title\n")
+	print("\nQwiic MicroPressure Example 1 - Basic Readings\n")
 
 	# Create instance of device
-	myDevice = qwiic_template.QwiicTemplate() # TODO update as needed
+	myMicroPressure = qwiic_micropressure.QwiicMicroPressure()
 
 	# Check if it's connected
-	if myDevice.is_connected() == False:
+	if myMicroPressure.is_connected() == False:
 		print("The device isn't connected to the system. Please check your connection", \
 			file=sys.stderr)
 		return
 
 	# Initialize the device
-	myDevice.begin()
+	myMicroPressure.begin()
 
-	# TODO Add basic example code
+	while True:
+		# The micropressure sensor outputs pressure readings in pounds per square inch (PSI).
+		#  Optionally, if you prefer pressure in another unit, the library can convert the
+		#  pressure reading to: pascals, kilopascals, bar, torr, inches of murcury, and
+		#  atmospheres.
+
+		# Get the pressure
+		print("Pressure(PSI): ", myMicroPressure.get_pressure())
+		print("Pressure(Pa): ", myMicroPressure.get_pressure(qwiic_micropressure.kPressurePa))
+		print("Pressure(kPa): ", myMicroPressure.get_pressure(qwiic_micropressure.kPressureKpa))
+		print("Pressure(Torr): ", myMicroPressure.get_pressure(qwiic_micropressure.kPressureTorr))
+		print("Pressure(InHg): ", myMicroPressure.get_pressure(qwiic_micropressure.kPressureInHg))
+		print("Pressure(Atm): ", myMicroPressure.get_pressure(qwiic_micropressure.kPressureAtm))
+		print("Pressure(Bar): ", myMicroPressure.get_pressure(qwiic_micropressure.kPressureBar))
+
+		# Wait a bit before reading again
+		time.sleep(0.500)
 
 if __name__ == '__main__':
 	try:
 		runExample()
 	except (KeyboardInterrupt, SystemExit) as exErr:
-		print("\nEnding Example")
+		print("\nEnding Example 1")
 		sys.exit(0)
