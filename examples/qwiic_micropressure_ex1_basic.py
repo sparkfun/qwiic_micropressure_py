@@ -59,13 +59,13 @@ def runExample():
 		#  atmospheres.
 
 		# Get the pressure
-		print("Pressure(PSI): ", myMicroPressure.get_pressure())
-		print("Pressure(Pa): ", myMicroPressure.get_pressure(qwiic_micropressure.kPressurePa))
-		print("Pressure(kPa): ", myMicroPressure.get_pressure(qwiic_micropressure.kPressureKpa))
-		print("Pressure(Torr): ", myMicroPressure.get_pressure(qwiic_micropressure.kPressureTorr))
-		print("Pressure(InHg): ", myMicroPressure.get_pressure(qwiic_micropressure.kPressureInHg))
-		print("Pressure(Atm): ", myMicroPressure.get_pressure(qwiic_micropressure.kPressureAtm))
-		print("Pressure(Bar): ", myMicroPressure.get_pressure(qwiic_micropressure.kPressureBar))
+		print("Pressure(PSI): ", myMicroPressure.read_pressure())
+		print("Pressure(Pa): ", myMicroPressure.read_pressure(myMicroPressure.kPressurePa))
+		print("Pressure(kPa): ", myMicroPressure.read_pressure(myMicroPressure.kPressureKpa))
+		print("Pressure(Torr): ", myMicroPressure.read_pressure(myMicroPressure.kPressureTorr))
+		print("Pressure(InHg): ", myMicroPressure.read_pressure(myMicroPressure.kPressureInHg))
+		print("Pressure(Atm): ", myMicroPressure.read_pressure(myMicroPressure.kPressureAtm))
+		print("Pressure(Bar): ", myMicroPressure.read_pressure(myMicroPressure.kPressureBar))
 
 		# Wait a bit before reading again
 		time.sleep(0.500)

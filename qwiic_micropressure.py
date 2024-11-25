@@ -114,7 +114,6 @@ class QwiicMicroPressure(object):
             self._i2c = i2c_driver
 
     ## Determines if the device is connected
-    # @rtype: bool
     # @return: True if the device is connected, otherwise False
     def is_connected(self):
         return self._i2c.isDeviceConnected(self.address)
@@ -122,7 +121,6 @@ class QwiicMicroPressure(object):
     connected = property(is_connected)
 
     ## Initializes the device with default parameters
-    # @rtype: bool
     # @return: True if the device was successfully initialized, otherwise False
     def begin(self):
         # Confirm device is connected before doing anything
@@ -130,7 +128,6 @@ class QwiicMicroPressure(object):
 
     ## Reads the pressure from the sensor
     # @param int units: The units to return the pressure in. Use one of the kPressure* constants
-    # @rtype: float
     # @return: The pressure in Pascals, or -1 on error
     def read_pressure(self, units=kPressurePsi):
 
@@ -142,7 +139,7 @@ class QwiicMicroPressure(object):
              time.sleep(0.001)
 
         # Read the pressure data
-        pressure_bytes = self._i2c.read_block(self.address, None, 3) # Passing "None" will cause us to read but not from a specific register. Requires the updated qwiic_i2c.py
+        pressure_bytes = self._i2c.read_block(self.address, None, 4) # Passing "None" will cause us to read but not from a specific register. Requires the updated qwiic_i2c.py
 
         # Verify the data integrity and saturation
         status = pressure_bytes[0]
