@@ -33,7 +33,7 @@
 # SOFTWARE.
 #===============================================================================
 
-"""
+"""!
 qwiic_micropressure
 ============
 Python module for the [SparkFun Qwiic MicroPressure Sensor](https://www.sparkfun.com/products/16476)
@@ -93,11 +93,13 @@ class QwiicMicroPressure(object):
     kPressureAtm = 5 # Atmospheres
     kPressureBar = 6 # Bars
 
-    ## Constructor
-    # @param int address: The I2C address to use for the device. If not provided, the default address is used
-    #
-    # @param I2CDriver i2c_driver: An existing i2c driver object. If not provided, a driver object is created
     def __init__(self, address=None, i2c_driver=None):
+        """!
+        Constructor
+
+        @param int address: The I2C address to use for the device. If not provided, the default address is used
+        @param I2CDriver i2c_driver: An existing i2c driver object. If not provided, a driver object is created
+        """
         # Use address if provided, otherwise pick the default
         if address in self.available_addresses:
             self.address = address
@@ -113,23 +115,32 @@ class QwiicMicroPressure(object):
         else:
             self._i2c = i2c_driver
 
-    ## Determines if the device is connected
-    # @return: True if the device is connected, otherwise False
     def is_connected(self):
+        """!
+        Determines if the device is connected
+
+        @return **bool** `True` if the device is connected, otherwise `False`
+        """
         return self._i2c.isDeviceConnected(self.address)
 
     connected = property(is_connected)
 
-    ## Initializes the device with default parameters
-    # @return: True if the device was successfully initialized, otherwise False
     def begin(self):
+        """!
+        Initializes the device with default parameters
+
+        @return **bool** `True`` if the device was successfully initialized, otherwise `False``
+        """
         # Confirm device is connected before doing anything
         return self.is_connected()
 
-    ## Reads the pressure from the sensor
-    # @param int units: The units to return the pressure in. Use one of the kPressure* constants
-    # @return: The pressure in Pascals, or -1 on error
     def read_pressure(self, units=kPressurePsi):
+        """!
+        Reads the pressure from the sensor
+
+        @param int units: The units to return the pressure in. Use one of the kPressure* constants
+        @return: The pressure in Pascals, or -1 on error
+        """
 
         # Request the pressure reading
         self._i2c.write_word(self.address, self.kReadPressureCommandReg, self.kReadPressureCommandData)
