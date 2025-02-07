@@ -1,9 +1,6 @@
 {
     "urls": [
-      ["qwiic_micropressure.py", "github:sparkfun/Qwiic_MicroPressure_Py/qwiic_micropressure.py"]
-    ],
-    "deps": [
-      ["github:sparkfun/Qwiic_I2C_Py", "master"]
+      ["qwiic_micropressure_py_examples/qwiic_micropressure_ex1_basic.py", "github:sparkfun/qwiic_micropressure_py/examples/qwiic_micropressure_ex1_basic.py"]
     ],
     "version": "1.0.0"
 }
