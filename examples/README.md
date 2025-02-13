@@ -4,6 +4,7 @@ Below is a brief summary of each of the example programs included in this reposi
 NOTE: Any numbering of examples is to retain consistency with the Arduino library from which this was ported. 
 
 ## Qwiic Micropressure Ex1 Basic
-This python library supports the SparkFun Electroncis Qwiic ecosystem
+Basic test of the Qwiic MicroPressure Sensor.
 
-
+The key methods showcased by this example are: 
+-[read_pressure](https://docs.sparkfun.com/qwiic_micropressure_py/classqwiic__micropressure_1_1_qwiic_micro_pressure.html)
