@@ -7,4 +7,4 @@ NOTE: Any numbering of examples is to retain consistency with the Arduino librar
 Basic test of the Qwiic MicroPressure Sensor.
 
 The key methods showcased by this example are: 
--[read_pressure](https://docs.sparkfun.com/qwiic_micropressure_py/classqwiic__micropressure_1_1_qwiic_micro_pressure.html)
+- [read_pressure](https://docs.sparkfun.com/qwiic_micropressure_py/classqwiic__micropressure_1_1_qwiic_micro_pressure.html)
