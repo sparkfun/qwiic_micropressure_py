@@ -3,7 +3,7 @@ requires = ["setuptools"]
 
 [project]
 name = "sparkfun_qwiic_micropressure"
-version = "1.0.0"
+version = "2.0.0"
 description = "Sparkfun Electronics Qwiic MicroPressure Package"
 readme = "DESCRIPTION.rst"
 
