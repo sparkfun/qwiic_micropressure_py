@@ -1,6 +1,6 @@
 ![Qwiic MICROPRESSURE - Python Package](docs/images/gh-banner.png "qwiic MICROPRESSURE Python Package")
 
-# SparkFun Qwiic MICROPRESSURE - Python Package
+# SparkFun Qwiic Micropressure - Python Package
 
 ![PyPi Version](https://img.shields.io/pypi/v/sparkfun_qwiic_micropressure)
 ![GitHub issues](https://img.shields.io/github/issues/sparkfun/qwiic_micropressure_py)
