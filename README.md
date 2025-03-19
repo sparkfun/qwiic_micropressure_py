@@ -23,7 +23,7 @@ This repository implements a Python package for the SparkFun Qwiic MICROPRESSURE
 
 ## About the Package
 
-This python package enables the user to access the features of the MICROPRESSURE via a single Qwiic cable. This includes reading pressure in Pa, reading pressure in Torr, reading pressure in Atm and more. The capabilities of the MICROPRESSURE are each demonstrated in the included examples.
+This python package enables the user to access the features of the micropressure sensor via a single Qwiic cable. This includes reading pressure in Pa, reading pressure in Torr, reading pressure in Atm and more. The capabilities of the MICROPRESSURE are each demonstrated in the included examples.
 
 New to qwiic? Take a look at the entire [SparkFun qwiic ecosystem](https://www.sparkfun.com/qwiic).
 
@@ -31,7 +31,7 @@ New to qwiic? Take a look at the entire [SparkFun qwiic ecosystem](https://www.s
 
 This Python package supports the following SparkFun qwiic products on Python, MicroPython and Circuit python. 
 
-* [SparkFun Pressure Sensing Sensor - MICROPRESSURE](https://www.sparkfun.com/products/16476)
+* [SparkFun Micropressure Sensor](https://www.sparkfun.com/products/16476)
 
 ### Supported Platforms
 
